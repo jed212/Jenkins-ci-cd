@@ -6,4 +6,9 @@ node {
   stage("Build project with test execution") {
     sh "./gradlew build"
   }
+  jacoco(
+    execPattern: '**/*.exec',
+    sourcePattern: 'src/main/java',
+    exclusionPattern: 'src/test*'
+  )
 }
