@@ -5,8 +5,6 @@ plugins {
     id 'jacoco'
     id 'com.google.cloud.tools.jib' version '3.3.1'
 }
-jib.to.image = 'jedfavour/jenkins-docker-project'
-jib.to.tags = [version, 'latest']
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -32,3 +30,6 @@ tasks.named('test') {
 test {
   finalizedBy jacocoTestReport
 }
+
+jib.to.image = 'jedfavour/jenkins-docker-project'
+jib.to.tags = [version, 'latest']
