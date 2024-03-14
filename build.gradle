@@ -30,6 +30,12 @@ tasks.named('test') {
 test {
   finalizedBy jacocoTestReport
 }
-
-jib.to.image = 'jedfavour/jenkins-docker-project'
-jib.to.tags = [version, 'latest']
+jib {
+  from {
+    image = 'openjdk:alpine'
+  }
+  to {
+    image = 'jedfavour/jenkins-docker-project'
+    credHelper = 'pass'
+    tags = [version, 'latest']
+  }}
