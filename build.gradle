@@ -38,4 +38,8 @@ jib {
     image = 'jedfavour/jenkins-docker-project'
     credHelper = 'pass'
     tags = [version, 'latest']
+    auth {
+            username = System.getenv('DOCKER_USERNAME')
+            password = System.getenv('DOCKER_PASSWORD')
+        }
   }}
