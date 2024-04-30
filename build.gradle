@@ -35,7 +35,7 @@ jib {
     image = 'openjdk:alpine'
   }
   to {
-    image = 'jedfavour/jenkins-docker-project'
+    image = 'jenkins-docker-project'
     credHelper = 'pass'
     tags = [version, 'latest']
   }}
