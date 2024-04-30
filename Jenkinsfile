@@ -13,7 +13,7 @@ node {
             withCredentials([usernamePassword(credentialsId: 'DOCKER_CRED', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
               sh '''
               echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-              ./gradlew jib -Ddocker.username=$DOCKER_USERNAME -Ddocker.password=$DOCKER_PASSWORD --stacktrace
+              ./gradlew jib -Djib.to.auth.username=$DOCKER_USERNAME -Djib.to.auth.password=$DOCKER_PASSWORD --stacktrace
               '''
             }
         },
