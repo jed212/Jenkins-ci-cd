@@ -35,11 +35,7 @@ jib {
     image = 'openjdk:alpine'
   }
   to {
-        image = 'jedfavour/jenkins-docker-project'
-        credHelper = 'pass'
-        auth {
-            username = System.getProperty('docker.username')
-            password = System.getProperty('docker.password')
-        }
-        tags = [version, 'latest']
-    }}
+    image = 'jedfavour/jenkins-docker-project'
+    credHelper = 'pass'
+    tags = [version, 'latest']
+  }}
